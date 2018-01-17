@@ -1,0 +1,43 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>MyPortfolio</title><base href="/portfolio/"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/x-icon" href="favicon.ico"><link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/><link href="styles.269453ac4ace7dbbc0ec.bundle.css" rel="stylesheet"/></head><body><app-root></app-root><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>jQuery(window).scroll(function(){
+      var wScroll = $(this).scrollTop();
+      
+      $('.logo').css({
+          'transform':'translate(0px, ' + wScroll/4 + '% )', 
+           
+          });
+
+          
+          $('.cup').css({
+          'transform':'translate(0px, ' + wScroll/4 + '% )'
+          });
+          
+          $('.laptop').css({
+          'transform':'translate(0px, ' + wScroll/40 + '% )'
+          });
+          
+          if(wScroll > $('.skillsgrid').offset().top - ($(window).height() / 1.2 )){
+          $('.skillsgrid figure').each(function(i){
+         
+           setTimeout(function(){
+          $('.skillsgrid figure').eq(i).addClass('is-showing');
+          }, 150 * (i+1));
+          });
+          }
+          if(wScroll > $('.large-window').offset().top - $(window).height()){
+          $('.large-window').css({'background-position':'center' + (wScroll - $('.large-window').offset().top) + 'px'});
+          var opacity = (wScroll - $('.large-window').offset().top + 400) / (wScroll/5);
+          $('.window-tint').css({'opacity': opacity});
+          }
+          
+          if(wScroll > $('.blog-posts').offset().top - $(window).height()){
+      
+          var offset = (Math.min(0, wScroll - $('.blog-posts').offset().top +$(window).height() - 350));
+      
+          $('.post-1').css({'transform': 'translate('+ offset +'px, '+ Math.abs(offset * 0.2) +'px)'});
+      
+          $('.post-3').css({'transform': 'translate('+ Math.abs(offset) +'px, '+ Math.abs(offset * 0.2) +'px)'});
+      
+        }
+          
+          
+      });</script><script type="text/javascript" src="inline.39f3f8a51f947667c263.bundle.js"></script><script type="text/javascript" src="polyfills.f039bbc7aaddeebcb9aa.bundle.js"></script><script type="text/javascript" src="main.8cb406aec287fc3b911a.bundle.js"></script></body></html>
